@@ -27,9 +27,10 @@ from scipy import interpolate
 import gausslib as G
 from collections import defaultdict
 
-orig_path = "Z:/pythonfiles/storm/STORMholographic_postdec"
+#orig_path = "Z:/pythonfiles/storm/STORMholographic_postdec"
 #orig_path = "C:\\Users\\Abhijit Marar\\Desktop\\Code\\STORMholographic_postdec"
 #orig_path = "C:\\Users\\abhij\\Desktop\\Code\\Code\\STORMholographic_postdec"
+orig_path = "C:/kner/Dropbox/temp"
 import pylab
 
 pi = N.pi
@@ -172,10 +173,10 @@ class sim(object):
         self.Ip = 2000.        
         #self.getfzpimg(xp,yp,3.e+3,0.0,Ip)            
         #self.Ip = rd.poisson(self.iip,self.Np)
-        print self.xp
-        print self.yp
-        print self.zp #print focus/self.zp
-        print self.Ip
+        print(self.xp)
+        print(self.yp)
+        print(self.zp) #print focus/self.zp
+        print(self.Ip)
         # create psfs
         for n in range(self.Nangs):
             for m in range(self.Np_sng):
@@ -207,10 +208,10 @@ class sim(object):
         #self.Ip = 4000.        
         #self.getfzpimg(xp,yp,3.e+3,0.0,Ip)            
         self.Ip = rd.poisson(self.iip,self.Np)
-        print self.xp
-        print self.yp
-        print self.zp #print focus/self.zp
-        print self.Ip
+        print(self.xp)
+        print(self.yp)
+        print(self.zp) #print focus/self.zp
+        print(self.Ip)
         # create psfs
         for m in range(self.Np):
             self.hol_1angle = self.getfzpimg_nonoise(self.xp[m],self.yp[m],self.zp[m],0.0,self.Ip[m])
@@ -418,8 +419,8 @@ class sim(object):
         pylab.figure(2)
         #pylab.plot(rm,'b-o')
         pylab.hist(rm)
-        print rpk.mean()/rpk.std()
-        print rm.mean()/rm.std()
+        print(rpk.mean()/rpk.std())
+        print(rm.mean()/rm.std())
     
     def runseqtest(self,Ns=500,Nz=4):
         ''' create a sequance of storm images with increasing
@@ -584,8 +585,8 @@ class sim(object):
         tf.imsave('storm1.tif',self.stack.astype(N.uint16))
         # plot stats
         pylab.plot(rpk,'b-o',ravg,'r-')
-        print push
-        print N.sqrt((self.zarr**2).sum())
+        print(push)
+        print(N.sqrt((self.zarr**2).sum()))
         
     def genetic(self, verbose=False):
         nxh = int(self.nx/2)
