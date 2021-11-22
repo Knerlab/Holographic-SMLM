@@ -36,7 +36,6 @@ fftshift = N.fft.fftshift
 
 class finch(object):
     
-    
     def __init__(self,img_stack=None):
         self.nz, self.ny, self.nx = img_stack.shape
         self.img = img_stack
@@ -432,7 +431,7 @@ class finch(object):
         self.final_res = [[0,0,0,0,0,0,0]]
         #self.CRLB_final = [[0,0,0,0,0,0,0]]      
         for i in range(len(coords)):
-            print i
+            print(i)
             self.mid_res = [[0,0,0,0,0]] 
             self.frame = coords[i,0]
             self.z_approx = coords[i,1]
@@ -482,7 +481,7 @@ class finch(object):
         coords = self.fin_coords_approx
         self.final_res = [[0,0,0,0,0,0,0]]
         for i in range(len(coords)):
-            print i
+            print(i)
             self.mid_res = [[0,0,0,0,0]] 
             self.frame = coords[i,0]
             self.z_approx = coords[i,1]
@@ -569,7 +568,7 @@ class finch(object):
         image = img
         self.final_res = [[0,0,0,0,0,0]]
         for i in range(len(coords)):
-            print i
+            print(i)
             #self.mid_res = [[0,0,0,0,0]] 
             self.frame = coords[i,0]
             self.x_approx = coords[i,1]
@@ -647,13 +646,13 @@ class finch(object):
             if(itr<5):
                for ll in range(params):
                    self.theta[ll]-=self.gamma[ll]*N.minimum(N.maximum(self.num[ll]/self.den[ll], -self.maxjump[ll]), self.maxjump[ll])    
-                   print self.theta[0]
-                   print self.theta[1]
+                   print(self.theta[0])
+                   print(self.theta[1])
             else:
                for ll in range(params):
                    self.theta[ll]-=N.minimum(N.maximum(self.num[ll]/self.den[ll], -self.maxjump[ll]), self.maxjump[ll])
-                   print self.theta[0]
-                   print self.theta[1]            
+                   print(self.theta[0])
+                   print(self.theta[1])
             '''Any other constraints'''
             self.theta[2]=N.maximum(self.theta[2], 1.0)
             self.theta[3]=N.maximum(self.theta[3], 0.01)
